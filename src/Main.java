@@ -9,6 +9,10 @@ public class Main {
         System.out.println("Immutable before: " + immutable);
         map.put(2, "bad");
         System.out.println("Immutable after: " + immutable);
-    }
 
+        // Дополнительная проверка иммутабельности
+        Map<Integer, String> retrievedMap = immutable.getMap();
+        retrievedMap.put(3, "attempt to modify");
+        System.out.println("Immutable after getter modification: " + immutable);
+    }
 }
